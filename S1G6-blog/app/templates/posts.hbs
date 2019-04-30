@@ -1,0 +1,17 @@
+<br>
+<h2>Blog Posts</h2>
+<div class="ui grid">
+  {{#each this.model as |onePost|}}
+    <div class="eight wide column">
+      <li style="font-size: 22px">{{onePost.title}}</li>
+    </div>
+    <div class="four wide column right aligned">
+      {{edit-post model=onePost ID=onePost.id}}
+    </div>
+    <div class="four wide column left aligned">
+      {{delete-post model=onePost ID=(concat "d" onePost.id)}}
+    </div>
+  {{/each}}
+</div>
+{{add-new-post}}
+<br><br>
